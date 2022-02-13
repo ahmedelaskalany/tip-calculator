@@ -5,10 +5,13 @@
 body {
   background-color: hsl(185, 41%, 84%);
   font-family: "Space Mono", monospace;
+  width: 100%;
 }
+
 .logo {
-  width: fit-content;
+  width: 100%;
   margin: 50px auto;
+  text-align: center;
 }
 .container {
   display: flex;
@@ -23,16 +26,26 @@ body {
   border-radius: 10px;
   position: relative;
 }
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    width: 300px;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    width: 500px;
+  }
+}
 .error {
   display: none;
   position: absolute;
-  border: 1px solid hsl(183, 100%, 15%);
   width: 50%;
   height: 50%;
   z-index: 1;
   text-align: center;
   border-radius: 5px;
-  overflow: hidden;
   background-color: hsl(183, 100%, 15%);
   color: white;
 }
@@ -59,6 +72,16 @@ body {
   flex: 1;
   flex-basis: 50%;
   padding: 20px;
+}
+@media (max-width: 767px) {
+  .left-side {
+    width: 90%;
+  }
+}
+@media (max-width: 900px) {
+  .left-side {
+    width: 90%;
+  }
 }
 .left-side p {
   margin: 20px 0 10px 0;
@@ -94,7 +117,6 @@ input::-webkit-inner-spin-button {
   font-size: 1.5em;
 }
 .left-side input#bill {
-  position: relative;
   background: url(../images/icon-dollar.svg) no-repeat left;
   background-position: 7px;
 }
@@ -102,7 +124,6 @@ input::-webkit-inner-spin-button {
   outline: none;
 }
 .left-side input#people {
-  position: relative;
   background: url(../images/icon-person.svg) no-repeat left;
   background-position: 7px;
 }
@@ -113,6 +134,11 @@ input::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+}
+@media (max-width: 767px) {
+  .tips {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .tip {
   text-align: center;
@@ -136,8 +162,16 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
   padding: 20px;
   height: 300px;
-  flex: 1;
-  flex-basis: 50%;
+}
+@media (max-width: 767px) {
+  .right-side {
+    width: 90%;
+  }
+}
+@media (max-width: 900px) {
+  .right-side {
+    width: 90%;
+  }
 }
 .amount {
   display: flex;
@@ -185,6 +219,11 @@ input::-webkit-inner-spin-button {
   color: hsl(183, 100%, 15%);
   cursor: pointer;
 }
+@media (max-width: 880px) {
+  .reset {
+    margin: 50px 20px 20px;
+  }
+}
 .reset:active {
   background-color: hsl(183, 100%, 28%);
   color: hsl(172, 67%, 45%);
@@ -195,11 +234,4 @@ input::-webkit-inner-spin-button {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
