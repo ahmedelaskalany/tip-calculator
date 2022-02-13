@@ -1,6 +1,5 @@
 let bill = document.getElementById("bill");
 let numPeople = document.getElementById("people");
-let active = document.queryCommandValue(".active");
 
 let percentTip = document.querySelectorAll(".tip");
 let customTip = document.getElementById("custom-tip");
@@ -61,7 +60,6 @@ customTip.addEventListener("input", () => {
     e.classList.remove("active");
     customTip.value = customVal;
   });
-  console.log(customVal);
   result(customVal);
 });
 
