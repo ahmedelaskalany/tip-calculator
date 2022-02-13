@@ -7,11 +7,12 @@ body {
   font-family: "Space Mono", monospace;
   width: 100%;
 }
-
 .logo {
   width: 100%;
   margin: 50px auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .container {
   display: flex;
@@ -19,24 +20,11 @@ body {
   width: 800px;
   gap: 20px;
   margin: auto;
-  /* min-height: 100vh; */
   justify-content: center;
   align-items: center;
   padding: 30px;
   border-radius: 10px;
   position: relative;
-}
-@media (max-width: 767px) {
-  .container {
-    flex-direction: column;
-    width: 300px;
-  }
-}
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    width: 500px;
-  }
 }
 .error {
   display: none;
@@ -73,16 +61,6 @@ body {
   flex-basis: 50%;
   padding: 20px;
 }
-@media (max-width: 767px) {
-  .left-side {
-    width: 90%;
-  }
-}
-@media (max-width: 900px) {
-  .left-side {
-    width: 90%;
-  }
-}
 .left-side p {
   margin: 20px 0 10px 0;
 }
@@ -90,10 +68,6 @@ body {
 .people-input {
   display: flex;
   background-color: hsl(185, 41%, 84%);
-}
-.bill-input img,
-.people-input img {
-  padding: 10px;
 }
 input:first-child,
 input:last-child {
@@ -135,11 +109,6 @@ input::-webkit-inner-spin-button {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
-@media (max-width: 767px) {
-  .tips {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 .tip {
   text-align: center;
   padding: 10px 20px;
@@ -162,16 +131,6 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
   padding: 20px;
   height: 300px;
-}
-@media (max-width: 767px) {
-  .right-side {
-    width: 90%;
-  }
-}
-@media (max-width: 900px) {
-  .right-side {
-    width: 90%;
-  }
 }
 .amount {
   display: flex;
@@ -219,11 +178,7 @@ input::-webkit-inner-spin-button {
   color: hsl(183, 100%, 15%);
   cursor: pointer;
 }
-@media (max-width: 880px) {
-  .reset {
-    margin: 50px 20px 20px;
-  }
-}
+
 .reset:active {
   background-color: hsl(183, 100%, 28%);
   color: hsl(172, 67%, 45%);
@@ -234,4 +189,36 @@ input::-webkit-inner-spin-button {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 750px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 300px !important;
+  }
+  .left-side {
+    width: 90%;
+  }
+  .tips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .right-side {
+    width: 90%;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    width: 500px;
+  }
+  .left-side {
+    width: 90%;
+  }
+  .right-side {
+    width: 90%;
+  }
+  .reset {
+    margin: 50px 20px 20px;
+  }
 }
